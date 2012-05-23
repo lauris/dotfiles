@@ -15,7 +15,6 @@ set clipboard=unnamed
 set ch=1
 set autoread
 
-
 " pathogen
 call pathogen#infect()
 
@@ -47,10 +46,10 @@ set nofoldenable
 " appearance
 set background=dark
 set t_Co=256
-colorscheme wombat256 " xoria 
-set cursorline
-set guicursor+=a:blinkon0
-hi CursorLine cterm=NONE
+colorscheme xoria256 " Tomorrow-Night wombat256 
+" set cursorline
+" set guicursor+=a:blinkon0
+" hi CursorLine cterm=NONE
 let html_no_rendering=1
 syntax on
 
@@ -78,6 +77,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" php documentator
+inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
+nnoremap <C-P> :call PhpDocSingle()<CR> 
+vnoremap <C-P> :call PhpDocRange()<CR> 
+
 " search
 set showmatch
 set hlsearch
@@ -87,7 +91,6 @@ set ic
 " wildmenu
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so
 set wildmenu
-set wildignorecase
 
 " taglist
 let Tlist_WinWidth = 30
@@ -100,15 +103,15 @@ nnoremap <leader><leader> <c-^>
 nnoremap ; :
 
 " command-t
-" let g:CommandTAcceptSelectionSplitMap='<C-y>'
-" let g:CommandTMaxHeight=15
+let g:CommandTAcceptSelectionSplitMap='<C-y>'
+let g:CommandTMaxHeight=15
 
 " fixes
-set notimeout
-set ttimeout
-set timeoutlen=100
+" set notimeout
+" set ttimeout
+" set timeoutlen=100
 
 " autocmds
-autocmd WinEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
+" autocmd WinEnter * setlocal cursorline
+" autocmd WinLeave * setlocal nocursorline
 
