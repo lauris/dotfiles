@@ -27,7 +27,7 @@ set laststatus=2
 set stl=%f\ %m\ %r\ Line:%l/%L\ Col:%v\ Buf:#%n
 
 " indentation & tabs
-set cindent
+" set cindent
 set smartindent
 set autoindent
 set wrap
@@ -46,10 +46,8 @@ set nofoldenable
 " appearance
 set background=dark
 set t_Co=256
-colorscheme xoria256 " Tomorrow-Night wombat256 
-" set cursorline
-" set guicursor+=a:blinkon0
-" hi CursorLine cterm=NONE
+colorscheme inkpot_custom
+set cursorline
 let html_no_rendering=1
 syntax on
 
@@ -115,3 +113,4 @@ let g:CommandTMaxHeight=15
 " autocmd WinEnter * setlocal cursorline
 " autocmd WinLeave * setlocal nocursorline
 
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
