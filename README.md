@@ -1,1 +1,1 @@
-teh dotfiles
+Vim, tmux configuration files
