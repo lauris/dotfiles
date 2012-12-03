@@ -41,7 +41,7 @@ set backspace=indent,eol,start
 set foldenable
 set foldmethod=indent
 set foldminlines=0
-set nofoldenable 
+set nofoldenable
 
 " appearance
 set background=dark
@@ -76,18 +76,19 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " php documentator
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
-nnoremap <C-P> :call PhpDocSingle()<CR> 
-vnoremap <C-P> :call PhpDocRange()<CR> 
+inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-P> :call PhpDocSingle()<CR>
+vnoremap <C-P> :call PhpDocRange()<CR>
 
 " search
 set showmatch
 set hlsearch
+
 set wrapscan
 set ic
 
 " wildmenu
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so,*log*
 set wildmenu
 
 " taglist
@@ -99,18 +100,17 @@ map <C-t> :TlistToggle<CR>
 nnoremap <space> :noh<return><space>
 nnoremap <leader><leader> <c-^>
 nnoremap ; :
+map <leader>y "*y
+map <leader>p "*p
+
 
 " command-t
 let g:CommandTAcceptSelectionSplitMap='<C-y>'
 let g:CommandTMaxHeight=15
-
-" fixes
-" set notimeout
-" set ttimeout
-" set timeoutlen=100
+let g:CommandTMaxFiles=50000
 
 " autocmds
-" autocmd WinEnter * setlocal cursorline
-" autocmd WinLeave * setlocal nocursorline
-
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+autocmd BufWritePre * :%s/\s\+$//e
+" autocmd FileType php set omnifunc=phpcomplete#CompletePHP
